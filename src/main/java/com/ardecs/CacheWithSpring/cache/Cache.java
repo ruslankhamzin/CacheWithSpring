@@ -1,18 +1,17 @@
 package com.ardecs.CacheWithSpring.cache;
 
 import com.ardecs.CacheWithSpring.cache.exceptions.FileAccessException;
-import com.ardecs.CacheWithSpring.cache.storage.DiskStorage;
 import com.ardecs.CacheWithSpring.cache.storage.StorageStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Cache<T, V> {
-    private final StorageStrategy<T, V> storageStrategy;
     private static final Logger LOGGER = LoggerFactory.getLogger(Cache.class);
+    private final StorageStrategy<T, V> storageStrategy;
+
     @Autowired
     public Cache(StorageStrategy storageStrategy) {
         LOGGER.info("CacheBean");

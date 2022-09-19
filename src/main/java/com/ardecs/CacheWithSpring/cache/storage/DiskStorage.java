@@ -4,8 +4,6 @@ import com.ardecs.CacheWithSpring.cache.exceptions.FileAccessException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
@@ -18,8 +16,7 @@ public class DiskStorage<T, V> implements StorageStrategy<T, V> {
     private static final String FILETYPE = ".txt";
     private static final Logger LOGGER = LoggerFactory.getLogger(DiskStorage.class);
     private final File cacheFiles;
-    @Value("3")
-    private int size;
+    private int size = 3;
 
     @Autowired
     public DiskStorage() {

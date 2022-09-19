@@ -3,7 +3,6 @@ package com.ardecs.CacheWithSpring.cache.storage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +14,7 @@ import java.util.Map;
 public class RAMStorage<T, V> implements StorageStrategy<T, V> {
     private static final Logger LOGGER = LoggerFactory.getLogger(RAMStorage.class);
     private final LinkedHashMap<T, V> values;
-    @Value("3")
-    private int size;
+    private final int size = 3;
 
     @Autowired
     public RAMStorage() {
