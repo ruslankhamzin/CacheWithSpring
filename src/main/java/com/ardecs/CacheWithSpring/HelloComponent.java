@@ -9,8 +9,9 @@ import javax.annotation.PostConstruct;
 @Component
 public class HelloComponent {
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloComponent.class);
+
     @PostConstruct
-    private void sayHello(){
+    private void sayHello() {
         LOGGER.info("Hello Spring");
     }
 }

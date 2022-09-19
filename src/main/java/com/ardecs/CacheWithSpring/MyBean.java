@@ -8,11 +8,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MyBean {
     private static final Logger LOGGER = LoggerFactory.getLogger(MyBean.class);
-        @Bean(initMethod = "init")
-        public MyBean helloBean(){
-            return new MyBean();
-        }
-        public void init(){
-            LOGGER.info("Hello Spring!");
-        }
+
+    @Bean(initMethod = "init")
+    public MyBean helloBean() {
+        return new MyBean();
+    }
+
+    public void init() {
+        LOGGER.info("Hello Spring!");
+    }
 }
